@@ -1,2 +1,2 @@
-# rsa
+# RSA
 RSA implementation in Python 
