@@ -1,14 +1,17 @@
+from random import randrange
+
 def miller_rabin(n, k=16):
     """Miller-Rabin primality testing.    
 
-    Deterministic if n < 2**64;
-    probablistic if n >= 2**64 (error probability 4**-k as soon as n ≥ 2**32)
+    Deterministic if n < 3317044064679887385961981 (≈ 1.37 * 2**81);
+    probablistic if n >= 3317044064679887385961981 (error probability < 4**-k).
     https://en.wikipedia.org/wiki/Miller-Rabin_primality_test
     
     n = Integer to be tested for primality.
     k = Number of rounds (witnesses) of testing.
     return False, if n is composite,
-    return True, if n is probably prime."""
+    return True, if n is probably prime.
+    """
     
     def is_composite(a, d, n, s):
         x = pow(a, d, n)
@@ -18,8 +21,8 @@ def miller_rabin(n, k=16):
             x = pow(x, 2, n)
             if x == n - 1:               
                 return False
-##            if x == 1:        # for finding factors
-##                return True
+            if x == 1:    
+                return True
         return True # n is composite
     
     primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
@@ -46,7 +49,7 @@ def miller_rabin(n, k=16):
     while not d & 1:    # while d % 2 == 0
         d >>= 1         # d = d // 2
         s += 1
-
+        
     # Smallest odd numbers for which Miller-Rabin primality test on bases
     # <= n-th prime does not reveal compositeness. https://oeis.org/A014233
     bases = (2047, 1373653, 25326001, 3215031751, 2152302898747,
@@ -57,4 +60,4 @@ def miller_rabin(n, k=16):
     for i, base in enumerate(bases, 1):
         if n < base:            
             return not any(is_composite(a, d, n, s) for a in primes[:i])
-    return not any(is_composite(a,d,n,s) for a in primes[:k])
+    return not any(is_composite(randrange(2, n-1), d, n, s) for a in range(k))
