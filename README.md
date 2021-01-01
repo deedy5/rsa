@@ -7,4 +7,4 @@ Made in accordance with: [Digital Signature Standard (DSS) (FIPS 186-4)](https:/
 
 1. Public and Private keys generation. FIPS 186-4: 5.1, APPENDIXes B.3, F.1, F.3.
     - Length of the modulus (i.e., nlen): 2048 and 3072 bits.
-    - Primes generation: Miller-Rabin algorithm. FIPS 186-4 APPENDIX B.3.3.
+    - Primes generation: Miller-Rabin algorithm. FIPS 186-4 APPENDIXes B.3.3, C.3.1.
