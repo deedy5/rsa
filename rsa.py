@@ -47,8 +47,8 @@ def rsa_keys(bits: int) -> (int, int):
                     if gcd(E, phi) == 1:
                         n = p * q
                         d = pow(E, -1, phi)
-                        # If d ≤ 2**(nlen//2), new p, q, d shall be determined.
-                        if 2**(nlen) < d < phi:
+                        # If d ≤ 2**(bits//2), new p, q, d shall be determined.
+                        if 2**nlen < d < phi:
                             public_key = (E, n)
                             private_key = (d, n)
                             return public_key, private_key 
