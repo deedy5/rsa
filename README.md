@@ -1,7 +1,7 @@
 [![alt text](https://img.shields.io/badge/python-3.8-red)](https://python.org)
 ---
 # RSA
-RSA implementation in Python 
+RSA key generations in Python 
 
 Made in accordance with: [FIPS 186-4](https://csrc.nist.gov/publications/detail/fips/186/4/final) 
 ---
