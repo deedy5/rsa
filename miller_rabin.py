@@ -1,6 +1,6 @@
 from random import randrange
-
-def miller_rabin(n, k=16):
+    
+def miller_rabin(n, k=40):
     """Miller-Rabin primality testing.    
 
     Deterministic if n < 3317044064679887385961981 (≈ 1.37 * 2**81);
@@ -8,9 +8,10 @@ def miller_rabin(n, k=16):
     https://en.wikipedia.org/wiki/Miller-Rabin_primality_test
     
     n = Integer to be tested for primality.
-    k = Number of rounds (witnesses) of testing.
+    k = 40 (error probability 2**-80): number of rounds (witnesses) of m-r
+    testing. FIPS 186-4, F.1.
     return False, if n is composite,
-    return True, if n is probably prime.
+    return True, if n is probably prime.    
     """
     
     def is_composite(a, d, n, s):
@@ -21,8 +22,8 @@ def miller_rabin(n, k=16):
             x = pow(x, 2, n)
             if x == n - 1:               
                 return False
-            if x == 1:    
-                return True
+##            if x == 1:    
+##                return True
         return True # n is composite
     
     primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
