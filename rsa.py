@@ -4,17 +4,12 @@ from math import gcd
 from miller_rabin import miller_rabin
 
 def getprime(bits: int) -> int:
-    """Generate a random bits size prime number"""
+    """Generate a random bits size prime number"""    
     
-    #rounds of M-R test. FIPS 186-4, C.3, F.3
-    if bits == 1024:
-        k = 5
-    elif bits == 1536:
-        k = 4
     while True:
         n = randbits(bits) | 1  # n += 1 if n is odd
         if n.bit_length() in (1024, 1536):
-            if miller_rabin(n, k + 1):
+            if miller_rabin(n):
                 return n
 
 def rsa_keys(bits: int) -> (int, int):
