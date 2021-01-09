@@ -1,6 +1,7 @@
 from secrets import randbits
 from random import randrange
 from math import gcd
+from decimal import Decimal
 from miller_rabin import miller_rabin
 
 def getprime(bits: int) -> int:
@@ -29,7 +30,7 @@ def rsa_keys(bits: int) -> (int, int):
 
     #  all IFC keys shall follow criteria to conform to FIPS 186-4. B.3.1
     nlen = bits//2    
-    lowlimit = (2**0.5) * (2**(nlen-1))
+    lowlimit = Decimal(2**0.5) * Decimal(2**(nlen-1))
     while True:        
         p = getprime(nlen)
         if  p >= lowlimit and gcd(E, p-1) == 1:
