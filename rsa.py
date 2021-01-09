@@ -20,7 +20,7 @@ def rsa_keys(bits: int) -> (int, int):
     (512 bits shall not). FIPS186-4. Appendix B.3.1. Criteria for IFC Key Pairs
     """
 
-    # exponent e shall be 16 < e < 2**256. FIPS 186-4. B.3.1
+    # exponent e shall be 2**16 < e < 2**256. FIPS 186-4. B.3.1
     E = 65537
 
     if bits not in (2048, 3072):
