@@ -3,6 +3,8 @@ from random import randrange
 import cProfile
 from rsa import miller_rabin
 from rsa import getprime
+from rsa import rsa_keys
+
 
 def timing(f):
     def wrap(*args):
@@ -20,6 +22,7 @@ def mr(n):
 def get_prime(bits):
     return getprime(bits)
 
+
 ##"""Miller-Rabin: one n"""
 ##n = 2**1279-1
 ####n = 2**2203-1
@@ -31,5 +34,4 @@ def get_prime(bits):
 ##print(len(primes))
 ##print(perf_counter() - t1)
 
-
-get_prime(1024)
+cProfile.run('rsa_keys(3072)', sort='cumtime')
