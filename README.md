@@ -11,3 +11,10 @@ The RSA Digital Signature Algorithm:
     - Length of the modulus: 2048 and 3072 bits.
     - Primes generation: Miller-Rabin algorithm. FIPS 186-4 APPENDIXes B.3.3, C.3.1.
     - Number of rounds (witnesses) of Miller-Rabin testing k = 40 (error probability 2**-80). FIPS 186-4, F.1.
+---
+Usage:
+
+Generate RSA keys, default bits = 2048:
+```
+python3 rsa.py
+```
