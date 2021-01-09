@@ -47,3 +47,6 @@ def rsa_keys(bits: int) -> (int, int):
                             public_key = (E, n)
                             private_key = (d, n)
                             return public_key, private_key
+                        
+if __name__ == '__main__':
+    print(rsa_keys(2048))
