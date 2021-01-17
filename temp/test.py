@@ -22,6 +22,10 @@ def mr(n):
 def get_prime(bits):
     return getprime(bits)
 
+@timing
+def rsakeys(bits):
+    return rsa_keys(bits)
+
 
 ##"""Miller-Rabin: one n"""
 ##n = 2**1279-1
@@ -34,4 +38,15 @@ def get_prime(bits):
 ##print(len(primes))
 ##print(perf_counter() - t1)
 
-cProfile.run('rsa_keys(3072)', sort='cumtime')
+##rsakeys(2048)
+##cProfile.run('rsakeys(3072)', sort='cumtime')
+bits = 2048
+"""Rsa_Keys: list"""
+r = []
+for _ in range(10):
+    t1 = perf_counter()
+    rsa_keys(bits)
+    t = perf_counter() - t1
+    r.append(t)
+    print(_)
+print(sum(r) / len(r))
