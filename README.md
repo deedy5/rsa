@@ -1,7 +1,11 @@
 [![alt text](https://img.shields.io/badge/python-3.8-red)](https://python.org)
 ---
 # RSA
-RSA key generations in Python 
+RSA key generations in Python
+
+`Time of rsa keys generation:
+2048 bits ≈ 0.7 s.
+3072 bits ≈ 2,1 s.`
 
 Made in accordance with: [FIPS 186-4](https://csrc.nist.gov/publications/detail/fips/186/4/final) 
 ---
