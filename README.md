@@ -1,4 +1,4 @@
-[![alt text](https://img.shields.io/badge/python-3.8-red)](https://python.org)
+[![Python >= 3.6](https://img.shields.io/badge/python->=3.6-red.svg)](https://www.python.org/downloads/)
 
 # RSA
 RSA key generations in Python
