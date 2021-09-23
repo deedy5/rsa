@@ -61,4 +61,4 @@ def rsa_keys(nlen: int) -> (int, int):
 
 
 if __name__ == '__main__':
-    print(rsa_keys(2048))
+    print(rsa_keys(3072))
