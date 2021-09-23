@@ -18,7 +18,7 @@ The RSA Digital Signature Algorithm:
 
 ### Usage:
 
-Generate RSA keys, default bits = 2048:
+Generate RSA keys, default bits = 3072:
 ```
 python3 rsa.py
 ```
